@@ -1,6 +1,6 @@
 #! /bin/bash
 # for new project run: git remote add github https://github.com/FreakOoo/name of project 
-# then use: git remote set-url github git@github.com:FreakOoo/push_swap
+# then use: git remote set-url github git@github.com:FreakOoo/name of project
 # to authenticate run: ssh -T git@github.com
 git add .
 git commit -m "small update"
