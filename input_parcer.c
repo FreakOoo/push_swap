@@ -20,7 +20,7 @@ char	**manage_input(int argc, char **argv)
 	{
 		// import libft for split
 		// also makefile
-		args = ft_split(argv[1], '	');
+		args = ft_split(argv[1], ' ');
 		if (!args || !args[0])
 		{
 			// if (args)
@@ -37,11 +37,18 @@ char	**manage_input(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+  int i;
+  i = 0;
 	char **args;
 	if (argc < 2)
 		return (0);
 	args = manage_input(argc, argv);
 	if (!args)
 		return (1);
+  while(args[i])
+  {
+    ft_printf("args[%d] = %s\n",i, args[i]);
+    i++;
+  }
 	return (0);
 }

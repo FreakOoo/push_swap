@@ -14,10 +14,8 @@
 
 void	ft_bzero(void *str, size_t size)
 {
-	int		i;
 	char	*char_str;
 
-	i = 0;
 	char_str = (char *)str;
 	while (size > 0)
 	{

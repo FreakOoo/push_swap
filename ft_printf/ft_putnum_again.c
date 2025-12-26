@@ -18,7 +18,7 @@ int	ft_putnum_again(size_t n, size_t base, char *symbols)
 {
 	int	i;
 
-	if (n < 0)
+	if (n <= 0)
 	{
 		write(1, "-", 1);
 		return (ft_putnum_again(-n, base, symbols) + 1);
