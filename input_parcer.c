@@ -6,10 +6,14 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/28 19:05:25 by mchopin       ########   odam.nl         */
+/*   Updated: 2025/12/28 19:42:44 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+// the last thing I modified was the main here
+// after the change the program recognised incorrect input as incorrect
+// problem is that it does this after printing the valid ones
+// it should instead reprompt for a correct input (I think, check the subject)
 #include "push_swap.h"
 
 int	ft_is_valid(char *s)
@@ -69,8 +73,16 @@ int	main(int argc, char **argv)
 		return (1);
 	while (args[i])
 	{
-		ft_printf("args[%d] = %s\n", i, args[i]);
-		i++;
+		if (ft_is_valid(args[i]) == 1)
+		{
+			ft_printf("args[%d] = %s\n", i, args[i]);
+			i++;
+		}
+		else
+		{
+			ft_printf("ERROR wrong input type");
+			return (1);
+		}
 	}
 	return (0);
 }
