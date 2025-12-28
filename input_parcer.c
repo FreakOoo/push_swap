@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/28 17:24:48 by mchopin       ########   odam.nl         */
+/*   Updated: 2025/12/28 19:05:25 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ char	**manage_input(int argc, char **argv)
 	{
 		args = ft_split(argv[1], ' ');
 		if (!args || !args[0])
-		{
 			return (NULL);
-		}
 		i = 0;
 		while (argv[i] != NULL)
 		{
