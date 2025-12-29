@@ -6,16 +6,12 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/29 21:17:07 by mchopin       ########   odam.nl         */
+/*   Updated: 2025/12/29 22:02:20 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// the last thing I modified was the main here
-// after the change the program recognised incorrect input as incorrect
-// problem is that it does this after printing the valid ones
-// it should instead reprompt for a correct input (I think, check the subject)
-// leaving this as is because it's nice for debugging.
-#include "push_swap.h"
+// now gotta check for duplicates
+// #include "push_swap.h"
 
 int	ft_is_valid(char *s)
 {
