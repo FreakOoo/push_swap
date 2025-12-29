@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   free_split.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/29 21:16:43 by mchopin       ########   odam.nl         */
+/*   Created: 2025/12/29 20:27:54 by mchopin       #+#    #+#                 */
+/*   Updated: 2025/12/29 21:20:33 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include <limits.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-char **manage_input(int argc, char **argv);
-void free_split(char **s);
-
-#endif
+void	free_split(char **s)
+{
+	int i = 0;
+	while (s[i])
+		free(s[i++]);
+	free(s);
+}

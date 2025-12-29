@@ -6,7 +6,7 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/12/22 21:43:57 by mchopin       #+#    #+#                  #
-#    Updated: 2025/12/22 22:06:23 by mchopin       ########   odam.nl          #
+#    Updated: 2025/12/29 21:19:25 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ PRINTF_DIR = ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a 
 
 
-SRCS=	input_parcer.c 
+SRCS=	input_parcer.c \
+free_split.c
+
 
 OBJ = $(SRCS:.c=.o)
 
