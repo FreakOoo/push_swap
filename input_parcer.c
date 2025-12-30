@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/30 17:09:18 by mchopin       ########   odam.nl         */
+/*   Updated: 2025/12/30 19:00:22 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_is_valid(char *s)
 	}
 	return (1);
 }
+//check for wrong input types and handle with and without quotations
 char	**manage_input(int argc, char **argv)
 {
 	char	**args;
@@ -55,5 +56,31 @@ char	**manage_input(int argc, char **argv)
 		i++;
 	}
 	return (args);
+}
+//check for duplicates
+int	check_duplicate(char **args)
+{
+	int i;
+	int j;
+	int a;
+	int b;
+	i = 0;
+	while (args[i])
+	{
+		a = ft_atoi(args[i]);
+		j = i + 1;
+		while (args[j])
+		{
+			b = ft_atoi(args[j]);
+			if (a == b)
+			{
+				ft_printf("ERROR, duplicates in input");
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
