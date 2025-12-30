@@ -6,12 +6,13 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/29 22:02:20 by mchopin       ########   odam.nl         */
+/*   Updated: 2025/12/30 17:09:18 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // now gotta check for duplicates
-// #include "push_swap.h"
+
+#include "push_swap.h"
 
 int	ft_is_valid(char *s)
 {
@@ -56,23 +57,3 @@ char	**manage_input(int argc, char **argv)
 	return (args);
 }
 
-int	main(int argc, char **argv)
-{
-	int		i;
-	char	**args;
-
-	i = 0;
-	if (argc < 2)
-		return (0);
-	args = manage_input(argc, argv);
-	if (!args)
-		return (1);
-	while (args[i])
-	{
-		ft_printf("args[%d] = %s\n", i, args[i]);
-		i++;
-	}
-	if (argc == 2)
-		free_split(args);
-	return (0);
-}

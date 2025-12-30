@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   check_duplicate.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/30 18:53:56 by mchopin       ########   odam.nl         */
+/*   Created: 2025/12/30 17:33:08 by mchopin       #+#    #+#                 */
+/*   Updated: 2025/12/30 18:53:25 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include <limits.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-char	**manage_input(int argc, char **argv);
-void	free_split(char **s);
-int		main(int argc, char **argv);
-int		check_duplicate(char **args);
-// will have to move duplicates to manvage input
-
-#endif
+int	check_duplicate(char **args)
+{
+	int i;
+	int j;
+	int a;
+	int b;
+	i = 0;
+	while (args[i])
+	{
+		a = ft_atoi(args[i]);
+		j = i + 1;
+		while (args[j])
+		{
+			b = ft_atoi(args[j]);
+			if (a == b)
+			{
+				ft_printf("ERROR, duplicates in input");
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
