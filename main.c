@@ -6,12 +6,18 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/30 18:55:52 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/12 19:59:09 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//currently the pipeline is
+//main.c calls manage input from the "input parcer.c"
+//manage input calls valid checkec(only checks if it's a digit)
+//main then also calls check duplicates
+//maybe I should combine is valid with the duplicate checker or rename 
+//is valid
 int	main(int argc, char **argv)
 {
 	int i;

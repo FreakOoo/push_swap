@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/12/30 18:53:56 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/12 19:15:56 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ char	**manage_input(int argc, char **argv);
 void	free_split(char **s);
 int		main(int argc, char **argv);
 int		check_duplicate(char **args);
-// will have to move duplicates to manvage input
+int		check_input_type(char *s);
+
+typedef struct s_node 
+{
+    int value;
+    struct s_node *next;
+} t_node;
 
 #endif
