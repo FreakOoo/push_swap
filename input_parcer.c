@@ -6,11 +6,18 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/12 21:15:44 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/12 22:24:00 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// now gotta check for duplicates
+// I need to fix something in manage input
+//currently if  I try to free, I free the arguments but also the argument ./push_swap
+//for example args = "./push_swap" ,"1", "2", "3", "NULL"
+//but I can't free push swap, that's not mine, not part of the array so I'm not supposed to free
+//that arg, so I have to make a change so I only free the other args,
+
+//I can make a ft duplicate argv function to take out the ./push_swap, then everything is malloced by me
+//and freeable BY ME :D
 
 #include "push_swap.h"
 
