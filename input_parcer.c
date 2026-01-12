@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/12 20:57:28 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/12 21:15:44 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,31 @@ int	check_input_type(char *s)
 	if (s[i] == '+' || s[i] == '-')
 		i++;
 	if (s[i] == '\0')
-		return (1);
+		return (0);
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 // handle with and without quotations and run is valid
 
-//i should probably check input type and duplicates in here
-//and not in main
+// i should probably check input type and duplicates in here
+// and not in main
 char	**manage_input(int argc, char **argv)
 {
 	char	**args;
 	int		i;
 
+	if (argc < 2)
+		return (NULL);
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
+		// apparently this can be just args ft_strdup_argv	but I don't have that func
+		// might make it to shorten this function
 		args = &argv[1];
 	if (!args || !args[0])
 		return (NULL);
@@ -52,7 +56,7 @@ char	**manage_input(int argc, char **argv)
 		if (!check_input_type(args[i]))
 		{
 			if (argc == 2)
-				free_split(args);
+				free_split(args), NULL;
 			ft_printf("%s\n", "ERROR, invalid input");
 			return (NULL);
 		}
@@ -87,32 +91,25 @@ int	check_duplicate(char **args)
 	}
 	return (0);
 }
-//this function converts input to int and
+// this function converts input to int and
 // make sure everything is good
-int all_good(int argc, char ** argv)
+int	all_good(int argc, char **argv)
 {
-	char **args;
-	
-	if (argc < 2)
-		return (0);
-	args = manage_input(argc, argv);
-	if(check_duplicate(args) == 1 && check_input_type(args) == 1)
-		return 1;
 
-	int i;
-	i = 0;
-	int j;
-	j = 0;
-	while (argv[i] != NULL)
-	{
-		while(*argv[j])
-		{
-			ft_atoi(argv[j]);
-			j++;
-		}
-		i++;
-	}
-	// now I exit if it's 1 [error] or I stay, convert the input from char to an int array , then linked list, or in one go linked list of ints
-	// either way, now I should know the input is safe, I turn it into integers and the correct data structure to make my stack A.
-	return 0;
+	//this function still needs a lot of work, might change name to all_good_makin_stack
+	char	**args;
+	//int		i;
+	//long	value;
+
+	args = manage_input(argc, argv);
+	if (!args)
+		return (0);
+	if (check_duplicate(args) == 1 || check_input_type(args) == 0)
+		return (0);
+	// now I exit if it's 1 [error] or I stay,
+		//convert the input from char to an int array , then linked list,
+		//or in one go linked list of ints
+	// either way, now I should know the input is safe,
+		//I turn it into integers and the correct data structure to make my stack A.
+	return (1);
 }
