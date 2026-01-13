@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/30 21:18:58 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/13 18:01:51 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/13 21:32:12 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 // currently I defined the structure in the .h
 
-char * create_stack_a(int argc, char **argv)
-{
+// char * create_stack_a(int argc, char **argv)
+// {
 
-}
+// }

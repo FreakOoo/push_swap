@@ -6,13 +6,12 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/13 21:24:28 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/13 21:34:45 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// I removed some logic from manage input to clean up
-// the error messages won't be different now, it'll only be error a
-// and handled elsewhere
+// manage input is now clean but I took out the duplicate checker
+// I'll do that once I'm building the stack (allegedly easier to do with linked list)
 #include "push_swap.h"
 
 int	check_input_type(char *s)
@@ -33,6 +32,32 @@ int	check_input_type(char *s)
 		i++;
 	}
 	return (1);
+}
+char	**dup_argv(char **argv)
+{
+	int len;
+	int j;
+	char **duplicate;
+
+	len = 0;
+	while (argv[len])
+		len++;
+	duplicate = malloc(sizeof(char *) * (len + 1));
+	if (!duplicate)
+		return (NULL);
+	j = 0;
+	while (j < len)
+	{
+		duplicate[j] = ft_strdup(argv[j]);
+		if (!duplicate[j])
+		{
+			free_split(duplicate);
+			return (NULL);
+		}
+		j++;
+	}
+	duplicate[j] = NULL;
+	return (duplicate);
 }
 char	**manage_input(int argc, char **argv)
 {
