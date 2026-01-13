@@ -6,12 +6,14 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/13 21:34:45 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/13 21:54:20 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // manage input is now clean but I took out the duplicate checker
-// I'll do that once I'm building the stack (allegedly easier to do with linked list)
+// I'll do that once I'm building the stack
+// (allegedly easier to do with linked list)
+
 #include "push_swap.h"
 
 int	check_input_type(char *s)
