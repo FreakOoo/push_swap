@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/12 19:15:56 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/13 20:34:24 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char	**manage_input(int argc, char **argv);
-void	free_split(char **s);
-int		main(int argc, char **argv);
-int		check_duplicate(char **args);
-int		check_input_type(char *s);
+char				**manage_input(int argc, char **argv);
+void				free_split(char **s);
+int					main(int argc, char **argv);
+int					check_duplicate(char **args);
+int					check_input_type(char *s);
+char				**dup_argv(char **argv);
 
-typedef struct s_node 
+typedef struct s_node
 {
-    int value;
-    struct s_node *next;
-} t_node;
+	int				value;
+	struct s_node	*next;
+}					t_node;
 
 #endif

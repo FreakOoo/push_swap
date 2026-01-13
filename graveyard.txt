@@ -1,0 +1,55 @@
+// should check duplicates after starting stack
+// // check for duplicates
+// int	check_duplicate(char **args)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	a;
+// 	int	b;
+
+// 	i = 0;
+// 	while (args[i])
+// 	{
+// 		a = ft_atoi(args[i]);
+// 		j = i + 1;
+// 		while (args[j])
+// 		{
+// 			b = ft_atoi(args[j]);
+// 			if (a == b)
+// 			{
+// 				ft_printf("ERROR, duplicates in input");
+// 				return (1);
+// 			}
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (0);
+// }
+// this function converts input to int and
+// make sure everything is good
+
+// MIGHT NEED TO MOVE THIS TO
+// CREATE STACK A
+
+// int	all_good(int argc, char **argv)
+// {
+
+// 	//this function still needs a lot of work,
+//		might change name to all_good_makin_stack
+// 	char	**args;
+// 	//int		i;
+// 	//long	value;
+
+// 	args = manage_input(argc, argv);
+// 	if (!args)
+// 		return (0);
+// 	if (check_duplicate(args) == 1 || check_input_type(args) == 0)
+// 		return (0);
+// 	// now I exit if it's 1 [error] or I stay,
+// 		//convert the input from char to an int array , then linked list,
+// 		//or in one go linked list of ints
+// 	// either way, now I should know the input is safe,
+// 		//I turn it into integers and the correct data structure to make my stack A.
+// 	return (1);
+// }
