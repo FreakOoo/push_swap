@@ -6,16 +6,14 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/30 21:18:58 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/15 09:54:29 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/15 10:00:25 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// unknown if atol works, unknown if the small node creator function works
-// I want to atol the numbers to avoid overflow with big numbers
-// the the helper is to make new nodes easier in the init of stack a
 
+//to avoid overflow, I use long
 long	ft_atol(const char *str)
 {
 	int		sign;
@@ -38,6 +36,7 @@ long	ft_atol(const char *str)
 	}
 	return (multiply * sign);
 }
+//duplicate checker in stack, to be tested
 int	check_duplicate(t_node *stack, int value)
 {
 	while (stack)
@@ -62,24 +61,27 @@ t_node	*new_node(int value)
 }
 // check if the prototype here works
 
-void	create_stack_a(t_node *a, char **args)
+void	create_stack_a(t_node **a, char **args)
 {
 	long num;
 	int i;
-	i = 0;
-	while (args[i])
-	{
-		// perhaps check duplicates in here
-		// LOGIC
-		// turn arguments to ints, then if they are messed up or duplicate
-		// free
-		// otherwise append them as a node.
+    t_node *node;
+    i = 0;
+    *a = NULL;
+    while (args[i])
+    {
 		num = ft_atol(args[i]);
 		if (num > INT_MAX || num < INT_MIN)
 			free_split(args); // free everything
-		// if(duplicate)
-		//     {
-		//     free_split(args); // free everything
-		//     }
-	}
+            //honestly I should make an error exit for both these cases
+            //should free stack, args and exit
+		if(check_duplicate(*a,(int)num))
+		    free_split(args); // free everything, error exit again
+        node = new_node((int)num);
+            if(!node)
+                //error exit
+        //and here I should have  a function call to add to 
+        //the back of the stack
+            i++;
+    }
 }
