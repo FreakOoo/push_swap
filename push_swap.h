@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/15 03:41:53 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/15 12:05:28 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@
 # include <unistd.h>
 
 char				**manage_input(int argc, char **argv);
+void				ft_error(t_node **stack, char **args);
 void				free_split(char **s);
 int					main(int argc, char **argv);
-int					check_duplicate(char **args);
+int					check_duplicate(t_node *stack, int value);
 int					check_input_type(char *s);
 char				**dup_argv(char **argv);
 

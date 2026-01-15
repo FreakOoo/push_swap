@@ -6,7 +6,7 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/12/22 21:43:57 by mchopin       #+#    #+#                  #
-#    Updated: 2026/01/14 16:28:14 by mchopin       ########   odam.nl          #
+#    Updated: 2026/01/15 11:52:49 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 SRCS=	input_parcer.c \
 free_split.c \
 create_stack_a.c \
+error_handeling.c \
 main.c
 
 
