@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/15 10:04:27 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/15 12:06:58 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/15 12:09:24 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 // eventually add free split and make ft error decide what message
 // to send depending on which one triggers
+//still need to finish
 
 int	free_stack(t_node **stack)
 {

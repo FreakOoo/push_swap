@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/30 21:18:58 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/15 10:00:25 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/15 12:12:39 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ long	ft_atol(const char *str)
 	return (multiply * sign);
 }
 //duplicate checker in stack, to be tested
+//need to look up why this compares to all previous
 int	check_duplicate(t_node *stack, int value)
 {
 	while (stack)
@@ -48,6 +49,7 @@ int	check_duplicate(t_node *stack, int value)
 	return (0);
 }
 // helper to create node
+//untested but looks relatively safe
 t_node	*new_node(int value)
 {
 	t_node	*node;
@@ -72,11 +74,10 @@ void	create_stack_a(t_node **a, char **args)
     {
 		num = ft_atol(args[i]);
 		if (num > INT_MAX || num < INT_MIN)
-			free_split(args); // free everything
-            //honestly I should make an error exit for both these cases
-            //should free stack, args and exit
+			free_split(args), free_stack(*a); // free everything
+            //still to be finished
 		if(check_duplicate(*a,(int)num))
-		    free_split(args); // free everything, error exit again
+		    free_split(args), free_stack(*a); // free everything, error exit again
         node = new_node((int)num);
             if(!node)
                 //error exit
