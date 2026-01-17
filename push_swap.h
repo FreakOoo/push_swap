@@ -28,6 +28,11 @@ int					main(int argc, char **argv);
 int					check_duplicate(t_node *stack, int value);
 int					check_input_type(char *s);
 char				**dup_argv(char **argv);
+void	free_stack(t_node **stack);
+void	ft_error(t_node **stack, char **args);
+long	ft_atol(const char *str);
+void append_stack(t_node * stack, int x);
+t_node	*new_node(int value);
 
 typedef struct s_node
 {

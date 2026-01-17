@@ -38,6 +38,18 @@ long	ft_atol(const char *str)
 }
 //duplicate checker in stack, to be tested
 //need to look up why this compares to all previous
+
+void append_stack(t_node * stack, int x)
+{
+  if(stack == NULL)
+    return;
+  t_node * new_node = malloc(sizeof(t_node));
+  new_node->value = x;
+  while()
+
+        //to be finished, then put at the end of create stack a 
+}
+
 int	check_duplicate(t_node *stack, int value)
 {
 	while (stack)
@@ -67,20 +79,20 @@ void	create_stack_a(t_node **a, char **args)
 {
 	long num;
 	int i;
-    t_node *node;
-    i = 0;
-    *a = NULL;
-    while (args[i])
-    {
+  t_node *node;
+  
+  i = 0;
+  *a = NULL;
+  while (args[i])
+  {
 		num = ft_atol(args[i]);
 		if (num > INT_MAX || num < INT_MIN)
-			free_split(args), free_stack(*a); // free everything
-            //still to be finished
+			ft_error(a,args); // free everything
 		if(check_duplicate(*a,(int)num))
-		    free_split(args), free_stack(*a); // free everything, error exit again
-        node = new_node((int)num);
-            if(!node)
-                //error exit
+		    ft_error(a,args); // free everything
+    node = new_node((int)num);
+    if(!node)
+      ft_error(a,args);
         //and here I should have  a function call to add to 
         //the back of the stack
             i++;

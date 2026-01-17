@@ -16,25 +16,28 @@
 // to send depending on which one triggers
 //still need to finish
 
-int	free_stack(t_node **stack)
+void	free_stack(t_node **stack)
 {
-	int	i;
-
-	i = 0;
-	while (stack[i])
+	t_node *tmp;
+  if(!stack || !*stack)
+      return;
+	while (*stack)
 	{
-		free(stack[i]);
-		i++;
+    tmp = (*stack)->next;
+    free(*stack);
+    *stack = tmp;
 	}
 }
 
 void	ft_error(t_node **stack, char **args)
 {
-	int	i;
-
-	i = 0;
 	if (args)
 		free_split(args);
-	if (stack && *stack)
-		free_stack(stack);
+
+  free_stack(stack);
+
+  write(2,"Error\n",6);
+  exit(EXIT_FAILURE);
+ //need to check if exit failure is a permitted macro
+  //otherwise I can make the return type int and return 1
 }
