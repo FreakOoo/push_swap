@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/15 12:05:28 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/19 18:33:31 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,22 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char				**manage_input(int argc, char **argv);
-void				ft_error(t_node **stack, char **args);
-void				free_split(char **s);
-int					main(int argc, char **argv);
-int					check_duplicate(t_node *stack, int value);
-int					check_input_type(char *s);
-char				**dup_argv(char **argv);
-void	free_stack(t_node **stack);
-void	ft_error(t_node **stack, char **args);
-long	ft_atol(const char *str);
-void append_stack(t_node * stack, int x);
-t_node	*new_node(int value);
-
 typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
 }					t_node;
+
+char				**manage_input(int argc, char **argv);
+int					ft_error(t_node **stack, char **args);
+void				free_split(char **s);
+int					main(int argc, char **argv);
+int					check_duplicate(t_node *stack, int value);
+int					check_input_type(char *s);
+char				**dup_argv(char **argv);
+void				free_stack(t_node **stack);
+long				ft_atol(const char *str);
+void				append_stack(t_node *stack, int x);
+t_node				*new_node(int value);
 
 #endif
