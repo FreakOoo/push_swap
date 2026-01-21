@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/20 18:39:13 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/21 20:56:05 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 	char **args;
 	t_node *a;
 	t_node *b;
-	
+
 	a = NULL;
 	b = NULL;
 	args = manage_input(argc, argv);
@@ -61,6 +61,18 @@ int	main(int argc, char **argv)
 	create_stack_a(&a, args);
 	ft_printf("stack A created \n");
 	print_stack(a);
-
+	ft_printf("\n swapping a : \n");
+	sa(&a);
+	print_stack(a);
+	ft_printf("\n swapping a : \n");
+	sa(&a);
+	print_stack(a);
+	ft_printf("\n rotating a : \n");
+	ra(&a);
+	print_stack(a);
+	ft_printf("\n rotating a : \n");
+	ra(&a);
+	print_stack(a);
+	
 	return (0);
 }

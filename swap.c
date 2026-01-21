@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   error_handeling.c                                  :+:    :+:            */
+/*   swap.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2026/01/15 10:04:27 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/21 16:41:56 by mchopin       ########   odam.nl         */
+/*   Created: 2026/01/21 15:37:02 by mchopin       #+#    #+#                 */
+/*   Updated: 2026/01/21 16:39:51 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// eventually add free split and make ft error decide what message
-// to send depending on which one triggers
-// still need to finish
-
-void	free_stack(t_node **stack)
+void	sa(t_node **a)
 {
-	t_node	*tmp;
-
-	if (!stack || !*stack)
+	t_node *tmp_top;
+	t_node *tmp_sec;
+	if ((*a) == NULL || (*a)->next == NULL || a == NULL)
 		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-}
 
-int	ft_error(t_node **stack, char **args)
-{
-	if (args)
-		free_split(args);
-	free_stack(stack);
-	write(2, "Error\n", 6);
-	exit(1);
+	tmp_top = *a;
+	tmp_sec = (*a)->next;
+
+	tmp_top->next = tmp_sec->next;
+	tmp_sec->next = tmp_top;
+	*a = tmp_sec;
 }

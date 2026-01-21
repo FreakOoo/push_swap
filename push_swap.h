@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/20 18:15:04 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/21 16:52:06 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void				free_stack(t_node **stack);
 long				ft_atol(const char *str);
 void				append_stack(t_node **stack, t_node *a);
 t_node				*new_node(int value);
-void	create_stack_a(t_node **a, char **args);
+void				create_stack_a(t_node **a, char **args);
+void				sa(t_node **a);
+void				ra(t_node **a);
 
 #endif
