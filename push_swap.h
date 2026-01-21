@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/19 18:33:31 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/20 18:15:04 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int					check_input_type(char *s);
 char				**dup_argv(char **argv);
 void				free_stack(t_node **stack);
 long				ft_atol(const char *str);
-void				append_stack(t_node *stack, int x);
+void				append_stack(t_node **stack, t_node *a);
 t_node				*new_node(int value);
+void	create_stack_a(t_node **a, char **args);
 
 #endif
