@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/21 16:52:06 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/23 20:09:02 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_node				*new_node(int value);
 void				create_stack_a(t_node **a, char **args);
 void				sa(t_node **a);
 void				ra(t_node **a);
-void  pb(t_node **a, t_node **b);
+void				rb(t_node **b);
+void				pb(t_node **a, t_node **b);
 
 #endif

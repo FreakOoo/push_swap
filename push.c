@@ -1,4 +1,15 @@
-//add banner
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   push.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/01/23 19:47:20 by mchopin       #+#    #+#                 */
+/*   Updated: 2026/01/23 19:50:45 by mchopin       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 //
 //run valgrind with ./push_swap "1 2 3 4 5 5 " to see if it 
 //works with free split missing
@@ -9,7 +20,6 @@ void pb(t_node **a, t_node **b)
 {
 
 t_node *tmp;
-
 if(*a == NULL)
     return;
 

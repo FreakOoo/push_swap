@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/21 20:56:05 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/23 20:15:52 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_stack(t_node *stack, char name)
 	i = 0;
 	while (stack)
 	{
-		ft_printf("%c[%i] = %i\n",name, i, stack->value);
+		ft_printf("%c[%i] = %i\n", name, i, stack->value);
 		stack = stack->next;
 		i++;
 	}
@@ -27,11 +27,14 @@ void	print_stack(t_node *stack, char name)
 
 int	main(int argc, char **argv)
 {
-	// TO TEST MANAGE INPUT
+	char	**args;
+	t_node	*a;
+	t_node	*b;
+	int		i;
 
+	// TO TEST MANAGE INPUT
 	// int i;
 	// char **args;
-
 	// i = 0;
 	// args = manage_input(argc, argv);
 	// if (!args)
@@ -46,17 +49,9 @@ int	main(int argc, char **argv)
 	// }
 	// free_split(args);
 	// return (0);
-
 	// testing stack
-
-	char **args;
-	t_node *a;
-	t_node *b; 
-
 	a = NULL;
 	b = NULL;
-  int i;
-
 	args = manage_input(argc, argv);
 	if (!args)
 		ft_error(&a, args);
@@ -68,28 +63,37 @@ int	main(int argc, char **argv)
 	print_stack(a, 'a');
 	ft_printf("\n swapping A : \n");
 	sa(&a);
-  print_stack(a, 'a');
-
-  
-  i = 0;
-  while(i<7)
-  {
-	ft_printf("\n rotating A : \n");
-	ra(&a);
-	print_stack(a,'a');
-  i++;
-  }
-  i = 0;
-  while(i<7)
-  {
-	ft_printf("\n pushing from A to  B : \n");
-  pb(&a,&b);
 	print_stack(a, 'a');
-  ft_printf("\n \n");
-  print_stack(b, 'b');
-  i++;
-  }
-
-
+	i = 0;
+	while (i < 7)
+	{
+		ft_printf("\n rotating A : \n");
+		ra(&a);
+		print_stack(a, 'a');
+		i++;
+	}
+	i = 0;
+	while (i < 7)
+	{
+		ft_printf("\n pushing from A to  B : \n");
+		pb(&a, &b);
+		print_stack(a, 'a');
+		ft_printf("\n \n");
+		print_stack(b, 'b');
+		i++;
+	}
+	i = 0;
+	while (i <= 2)
+	{
+		ft_printf("\n rotating B : \n");
+		rb(&b);
+		print_stack(a, 'a');
+		ft_printf("\n \n");
+		print_stack(b, 'b');
+		i++;
+	}
+	free_split(args);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }
