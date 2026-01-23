@@ -24,6 +24,7 @@ create_stack_a.c \
 error_handeling.c \
 swap.c \
 rotate.c \
+push.c \
 main.c
 
 

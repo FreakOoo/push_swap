@@ -41,5 +41,6 @@ t_node				*new_node(int value);
 void				create_stack_a(t_node **a, char **args);
 void				sa(t_node **a);
 void				ra(t_node **a);
+void  pb(t_node **a, t_node **b);
 
 #endif

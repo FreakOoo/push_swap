@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-void	print_stack(t_node *stack)
+void	print_stack(t_node *stack, char name)
 {
 	int	i;
 
 	i = 0;
 	while (stack)
 	{
-		ft_printf("a[%i] = %i\n", i, stack->value);
+		ft_printf("%c[%i] = %i\n",name, i, stack->value);
 		stack = stack->next;
 		i++;
 	}
@@ -51,29 +51,45 @@ int	main(int argc, char **argv)
 
 	char **args;
 	t_node *a;
-//	t_node *b; not in use yet
+	t_node *b; 
 
 	a = NULL;
-	//b = NULL; not in use yet
+	b = NULL;
+  int i;
 
 	args = manage_input(argc, argv);
 	if (!args)
 		ft_error(&a, args);
 	create_stack_a(&a, args);
 	ft_printf("stack A created \n");
-	print_stack(a);
-	ft_printf("\n swapping a : \n");
+	print_stack(a, 'a');
+	ft_printf("\n swapping A : \n");
 	sa(&a);
-	print_stack(a);
-	ft_printf("\n swapping a : \n");
+	print_stack(a, 'a');
+	ft_printf("\n swapping A : \n");
 	sa(&a);
-	print_stack(a);
-	ft_printf("\n rotating a : \n");
+  print_stack(a, 'a');
+
+  
+  i = 0;
+  while(i<7)
+  {
+	ft_printf("\n rotating A : \n");
 	ra(&a);
-	print_stack(a);
-	ft_printf("\n rotating a : \n");
-	ra(&a);
-	print_stack(a);
-	
+	print_stack(a,'a');
+  i++;
+  }
+  i = 0;
+  while(i<7)
+  {
+	ft_printf("\n pushing from A to  B : \n");
+  pb(&a,&b);
+	print_stack(a, 'a');
+  ft_printf("\n \n");
+  print_stack(b, 'b');
+  i++;
+  }
+
+
 	return (0);
 }
