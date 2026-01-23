@@ -6,10 +6,12 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/23 20:15:52 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/23 21:13:22 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+// now need to make
+// rra, rrb , ss, rr, rrr
 #include "push_swap.h"
 
 void	print_stack(t_node *stack, char name)
@@ -92,6 +94,14 @@ int	main(int argc, char **argv)
 		print_stack(b, 'b');
 		i++;
 	}
+	ft_printf("\n swapping B : \n");
+	sb(&b);
+	print_stack(b, 'b');
+	ft_printf("\n Pushing B to A : \n");
+	pa(&b, &a);
+	print_stack(b, 'b');
+	ft_printf("\n");
+	print_stack(a, 'a');
 	free_split(args);
 	free_stack(&a);
 	free_stack(&b);
