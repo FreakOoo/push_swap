@@ -20,7 +20,6 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 
 SRCS=	input_parcer.c \
-free_split.c \
 create_stack_a.c \
 error_handeling.c \
 swap.c \

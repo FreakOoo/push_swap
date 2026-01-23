@@ -16,6 +16,14 @@
 // to send depending on which one triggers
 // still need to finish
 
+void	free_split(char **s)
+{
+	int i = 0;
+	while (s[i])
+		free(s[i++]);
+	free(s);
+}
+
 void	free_stack(t_node **stack)
 {
 	t_node	*tmp;

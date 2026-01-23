@@ -51,10 +51,11 @@ int	main(int argc, char **argv)
 
 	char **args;
 	t_node *a;
-	t_node *b;
+//	t_node *b; not in use yet
 
 	a = NULL;
-	b = NULL;
+	//b = NULL; not in use yet
+
 	args = manage_input(argc, argv);
 	if (!args)
 		ft_error(&a, args);
