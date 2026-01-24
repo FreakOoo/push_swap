@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   rotate.c                                           :+:    :+:            */
+/*   sorting_utils.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2026/01/21 16:42:01 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/24 16:09:03 by mchopin       ########   odam.nl         */
+/*   Created: 2026/01/24 19:19:36 by mchopin       #+#    #+#                 */
+/*   Updated: 2026/01/24 19:30:50 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+// was working on this last
 #include "push_swap.h"
 
-void	ra(t_node **a)
+int	is_sorted(t_node **a)
 {
-	t_node	*top;
-	t_node	*last;
-
-	if (!a || !*a || !(*a)->next)
-		return ;
-	top = *a;
-	*a = top->next;
-	last = *a;
-	while (last->next)
-		last = last->next;
-	last->next = top;
-	top->next = NULL;
-}
-void	rb(t_node **b)
-{
-	ra(b);
-}
-void	rr(t_node **a, t_node **b)
-{
-	ra(a);
-	ra(b);
+	t_node *tmp;
+	tmp = *a;
+	while (tmp->next != NULL)
+	{
+		if (tmp > tmp->next)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
 }

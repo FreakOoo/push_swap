@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   rotate.c                                           :+:    :+:            */
+/*   reverse_r.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2026/01/21 16:42:01 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/24 16:09:03 by mchopin       ########   odam.nl         */
+/*   Created: 2026/01/24 16:11:34 by mchopin       #+#    #+#                 */
+/*   Updated: 2026/01/24 17:47:57 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_node **a)
+void	rra(t_node **a)
 {
-	t_node	*top;
 	t_node	*last;
+	t_node	*tmp;
 
 	if (!a || !*a || !(*a)->next)
 		return ;
-	top = *a;
-	*a = top->next;
 	last = *a;
-	while (last->next)
+	while (last->next->next)
 		last = last->next;
-	last->next = top;
-	top->next = NULL;
+	tmp = last;
+	last = last->next;
+	tmp->next = NULL;
+	last->next = *a;
+	*a = last;
 }
-void	rb(t_node **b)
+
+void	rrb(t_node **b)
 {
-	ra(b);
+	rra(b);
 }
-void	rr(t_node **a, t_node **b)
+void	rrr(t_node **a, t_node **b)
 {
-	ra(a);
-	ra(b);
+	rra(a);
+	rrb(b);
 }

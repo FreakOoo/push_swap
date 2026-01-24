@@ -6,7 +6,7 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/12/22 21:43:57 by mchopin       #+#    #+#                  #
-#    Updated: 2026/01/21 16:50:49 by mchopin       ########   odam.nl          #
+#    Updated: 2026/01/24 19:25:42 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ create_stack_a.c \
 error_handeling.c \
 swap.c \
 rotate.c \
+reverse_r.c \
+sorting_utils.c \
 push.c \
 main.c
 

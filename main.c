@@ -6,12 +6,12 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/23 21:13:22 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/24 19:32:20 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// now need to make
-// rra, rrb , ss, rr, rrr
+// make sure if no argv input, reprompt
+
 #include "push_swap.h"
 
 void	print_stack(t_node *stack, char name)
@@ -32,26 +32,8 @@ int	main(int argc, char **argv)
 	char	**args;
 	t_node	*a;
 	t_node	*b;
-	int		i;
 
-	// TO TEST MANAGE INPUT
-	// int i;
-	// char **args;
-	// i = 0;
-	// args = manage_input(argc, argv);
-	// if (!args)
-	// {
-	// 	ft_printf("ERROR YOU STUPID DINGUS: silly input");
-	// 	return (1);
-	// }
-	// while (args[i])
-	// {
-	// 	ft_printf("args[%d] = %s\n", i, args[i]);
-	// 	i++;
-	// }
-	// free_split(args);
-	// return (0);
-	// testing stack
+	// int		i;
 	a = NULL;
 	b = NULL;
 	args = manage_input(argc, argv);
@@ -66,42 +48,72 @@ int	main(int argc, char **argv)
 	ft_printf("\n swapping A : \n");
 	sa(&a);
 	print_stack(a, 'a');
-	i = 0;
-	while (i < 7)
-	{
-		ft_printf("\n rotating A : \n");
-		ra(&a);
-		print_stack(a, 'a');
-		i++;
-	}
-	i = 0;
-	while (i < 7)
-	{
-		ft_printf("\n pushing from A to  B : \n");
-		pb(&a, &b);
-		print_stack(a, 'a');
-		ft_printf("\n \n");
-		print_stack(b, 'b');
-		i++;
-	}
-	i = 0;
-	while (i <= 2)
-	{
-		ft_printf("\n rotating B : \n");
-		rb(&b);
-		print_stack(a, 'a');
-		ft_printf("\n \n");
-		print_stack(b, 'b');
-		i++;
-	}
-	ft_printf("\n swapping B : \n");
-	sb(&b);
-	print_stack(b, 'b');
-	ft_printf("\n Pushing B to A : \n");
-	pa(&b, &a);
-	print_stack(b, 'b');
-	ft_printf("\n");
-	print_stack(a, 'a');
+	// i = 0;
+	// while (i < 7)
+	// {
+	// 	ft_printf("\n rotating A : \n");
+	// 	ra(&a);
+	// 	print_stack(a, 'a');
+	// 	i++;
+	// }
+	// i = 0;
+	// while (i < 5)
+	// {
+	// 	ft_printf("\n pushing from A to  B : \n");
+	// 	pb(&a, &b);
+	// 	print_stack(a, 'a');
+	// 	ft_printf("\n \n");
+	// 	print_stack(b, 'b');
+	// 	i++;
+	// }
+	// i = 0;
+	// while (i <= 2)
+	// {
+	// 	ft_printf("\n rotating B : \n");
+	// 	rb(&b);
+	// 	print_stack(a, 'a');
+	// 	ft_printf("\n \n");
+	// 	print_stack(b, 'b');
+	// 	i++;
+	// }
+	// ft_printf("\n swapping B : \n");
+	// sb(&b);
+	// print_stack(b, 'b');
+	// ft_printf("\n Pushing B to A : \n");
+	// pa(&b, &a);
+	// print_stack(b, 'b');
+	// ft_printf("\n");
+	// print_stack(a, 'a');
+	// ft_printf("\n SS : \n");
+	// ss(&a, &b);
+	// print_stack(b, 'b');
+	// ft_printf("\n");
+	// print_stack(a, 'a');
+	// ft_printf("\n RR : \n");
+	// rr(&a, &b);
+	// print_stack(b, 'b');
+	// ft_printf("\n");
+	// print_stack(a, 'a');
+	// ft_printf("\n reverse rotate a  : \n");
+	// rra(&a);
+	// print_stack(a, 'a');
+	// ft_printf("\n");
+	// ft_printf("\n reverse rotate B  : \n");
+	// rrb(&b);
+	// print_stack(b, 'b');
+	// ft_printf("\n");
+	// print_stack(a, 'a');
+	// ft_printf("\n reverse rotate a and b  : \n");
+	// rrr(&a, &b);
+	// print_stack(b, 'b');
+	// ft_printf("\n");
+	// print_stack(a, 'a');
+	if (is_sorted(&a) == 1)
+		ft_printf("### this shit is not sorted###");
+	else if (is_sorted(&a) == 0)
+		ft_printf("### nicely sorted### ");
+	else
+		ft_printf("### didn't bother checking if sorted###");
 	free_split(args);
 	free_stack(&a);
 	free_stack(&b);

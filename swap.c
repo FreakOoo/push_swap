@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/21 15:37:02 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/23 21:03:08 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/24 15:50:26 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@ void	sa(t_node **a)
 }
 void	sb(t_node **b)
 {
+	sa(b);
+}
+void	ss(t_node **a, t_node **b)
+{
+	sa(a);
 	sa(b);
 }
