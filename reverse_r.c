@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/24 16:11:34 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/24 17:47:57 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:58:21 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,18 @@ void	rra(t_node **a)
 	tmp->next = NULL;
 	last->next = *a;
 	*a = last;
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **b)
 {
 	rra(b);
+	write(1, "rrb\n", 4);
 }
+
 void	rrr(t_node **a, t_node **b)
 {
 	rra(a);
 	rrb(b);
+	write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/11/11 17:40:00 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/11/24 17:10:45 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 21:01:01 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_putnum_intret(long n, int base, char *symbols)
 {
 	int	i;
+
 	if (n < 0)
 	{
 		write(1, "-", 1);

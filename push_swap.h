@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/27 19:45:50 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:27:25 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void				rr(t_node **a, t_node **b);
 void				rra(t_node **a);
 void				rrb(t_node **b);
 void				rrr(t_node **a, t_node **b);
-int					is_sorted(t_node **a);
+int					is_sorted(t_node *a);
 void				small_sort(t_node **a);
 
 #endif

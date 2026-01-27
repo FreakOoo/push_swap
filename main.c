@@ -6,11 +6,11 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/24 19:32:20 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:49:31 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// make sure if no argv input, reprompt
+// for some reason small sort doesn't seem to trigger here
 
 #include "push_swap.h"
 
@@ -40,14 +40,26 @@ int	main(int argc, char **argv)
 	if (!args)
 		ft_error(&a, args);
 	create_stack_a(&a, args);
-	ft_printf("stack A created \n");
+	ft_printf("\n### stack A and B created ### \n\n");
 	print_stack(a, 'a');
-	ft_printf("\n swapping A : \n");
-	sa(&a);
+	print_stack(b, 'b');
+	if (is_sorted(a) == 0)
+		ft_printf("\n### this shit is not sorted ###\n\n");
+	else if (is_sorted(a) == 1)
+		ft_printf("\n### nicely sorted ###\n\n ");
+	else
+		ft_printf("\n### didn't bother checking if sorted ### \n\n");
+	ft_printf("\n✰✰✰ I'M GONNA SOOOORT ✰✰✰ \n\n");
+	small_sort(&a);
+	ft_printf("\n");
 	print_stack(a, 'a');
-	ft_printf("\n swapping A : \n");
-	sa(&a);
-	print_stack(a, 'a');
+	print_stack(b, 'b');
+	// ft_printf("\n swapping A : \n");
+	// sa(&a);
+	// print_stack(a, 'a');
+	// ft_printf("\n swapping A : \n");
+	// sa(&a);
+	// print_stack(a, 'a');
 	// i = 0;
 	// while (i < 7)
 	// {
@@ -108,12 +120,12 @@ int	main(int argc, char **argv)
 	// print_stack(b, 'b');
 	// ft_printf("\n");
 	// print_stack(a, 'a');
-	if (is_sorted(&a) == 1)
-		ft_printf("### this shit is not sorted###");
-	else if (is_sorted(&a) == 0)
-		ft_printf("### nicely sorted### ");
+	if (is_sorted(a) == 0)
+		ft_printf("\n\n### this shit is not sorted###");
+	else if (is_sorted(a) == 1)
+		ft_printf("\n\n### nicely sorted### ");
 	else
-		ft_printf("### didn't bother checking if sorted###");
+		ft_printf("\n\n### didn't bother checking if sorted###");
 	free_split(args);
 	free_stack(&a);
 	free_stack(&b);

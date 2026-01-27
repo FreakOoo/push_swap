@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/17 17:17:52 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/24 19:03:44 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:55:16 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ int	check_input_type(char *s)
 	}
 	return (1);
 }
+
 char	**dup_argv(char **argv)
 {
-	int len;
-	int j;
-	char **duplicate;
+	int		len;
+	int		j;
+	char	**duplicate;
 
 	len = 0;
 	while (argv[len])

@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/15 10:04:27 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/21 16:41:56 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:57:07 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 void	free_split(char **s)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (s[i])
 		free(s[i++]);
 	free(s);

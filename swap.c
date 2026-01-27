@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/21 15:37:02 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/24 15:50:26 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:56:17 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,18 @@ void	sa(t_node **a)
 	tmp_top->next = tmp_sec->next;
 	tmp_sec->next = tmp_top;
 	*a = tmp_sec;
+	write(1, "sa\n", 3);
 }
+
 void	sb(t_node **b)
 {
 	sa(b);
+	write(1, "sb\n", 3);
 }
+
 void	ss(t_node **a, t_node **b)
 {
 	sa(a);
 	sa(b);
+	write(1, "ss\n", 3);
 }

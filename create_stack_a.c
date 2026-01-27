@@ -62,6 +62,7 @@ int	check_duplicate(t_node *stack, int value)
 	}
 	return (0);
 }
+
 t_node	*new_node(int value)
 {
 	t_node	*node;

@@ -6,22 +6,23 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/24 19:19:36 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/27 19:19:48 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 20:57:49 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // was working on this last
 #include "push_swap.h"
 
-int	is_sorted(t_node **a)
+int	is_sorted(t_node *a)
 {
-	t_node *tmp;
-	tmp = *a;
+	t_node	*tmp;
+
+	tmp = a;
 	while (tmp->next != NULL)
 	{
-		if (tmp > tmp->next)
-			return (1);
+		if (tmp->value > tmp->next->value)
+			return (0);
 		tmp = tmp->next;
 	}
-	return (0);
+	return (1);
 }

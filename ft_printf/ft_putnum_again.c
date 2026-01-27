@@ -6,13 +6,11 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/11/22 03:01:17 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/11/22 06:26:04 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/27 21:01:20 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-
 
 int	ft_putnum_again(size_t n, size_t base, char *symbols)
 {
@@ -31,6 +29,7 @@ int	ft_putnum_again(size_t n, size_t base, char *symbols)
 		return (i + ft_putnum_again(n % base, base, symbols));
 	}
 }
+
 int	ft_ptr_helper(size_t n, size_t base, char *symbols)
 {
 	if (!n)
