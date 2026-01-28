@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/27 20:27:25 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/28 18:43:21 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long				ft_atol(const char *str);
 void				append_stack(t_node **stack, t_node *a);
 t_node				*new_node(int value);
 void				create_stack_a(t_node **a, char **args);
+void				print_stack(t_node *stack, char name);
 // actions _____________
 void				sa(t_node **a);
 void				sb(t_node **b);
@@ -51,7 +52,10 @@ void				rr(t_node **a, t_node **b);
 void				rra(t_node **a);
 void				rrb(t_node **b);
 void				rrr(t_node **a, t_node **b);
+// sorting _____________________
+int					stack_len(t_node *a);
 int					is_sorted(t_node *a);
 void				small_sort(t_node **a);
+void				turk_sort(t_node **a, t_node **b);
 
 #endif

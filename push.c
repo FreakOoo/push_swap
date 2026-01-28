@@ -6,13 +6,9 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/23 19:47:20 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/27 20:43:06 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/28 13:56:42 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-//
-// run valgrind with ./push_swap "1 2 3 4 5 5 " to see if it
-// works with free split missing
 
 #include "push_swap.h"
 

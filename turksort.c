@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   error_handeling.c                                  :+:    :+:            */
+/*   turksort.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2026/01/15 10:04:27 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/28 13:56:22 by mchopin       ########   odam.nl         */
+/*   Created: 2026/01/28 13:57:43 by mchopin       #+#    #+#                 */
+/*   Updated: 2026/01/28 19:13:17 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+// currently this segfaults, I'll have to figure out why...
+// so now it properly pushes to B enough times
+// but then it segfaults
 #include "push_swap.h"
 
-void	free_split(char **s)
+void	turk_sort(t_node **a, t_node **b)
 {
-	int	i;
+	t_node *eyes;
+	eyes = *a;
 
-	i = 0;
-	while (s[i])
-		free(s[i++]);
-	free(s);
-}
-
-void	free_stack(t_node **stack)
-{
-	t_node	*tmp;
-
-	if (!stack || !*stack)
-		return ;
-	while (*stack)
+	//now this works for small sort
+	//currently checking if A is sorted, which it is
+	//but b is not checked for sorting
+	//and not sorted 
+	while (stack_len(*a) > 3)
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		pb(a, b);
+		if (eyes)
+			eyes = eyes->next;
 	}
-}
-
-int	ft_error(t_node **stack, char **args)
-{
-	if (args)
-		free_split(args);
-	free_stack(stack);
-	write(2, "Error\n", 6);
-	exit(1);
+	small_sort(a);
 }
