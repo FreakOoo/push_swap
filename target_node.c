@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/30 23:27:54 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/31 00:10:25 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/31 00:14:36 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,5 @@ void	set_index(t_node *a)
 		i++;
 	}
 }
+
+//this is where I left off, still need to test.
