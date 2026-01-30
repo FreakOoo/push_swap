@@ -24,14 +24,18 @@ void	small_sort(t_node **a)
 	t_node	*top;
 	t_node	*last;
 
+  if(is_sorted(*a))
+      return;
 	top = *a;
 	last = *a;
-	while (last->next)
+  while(last -> next)
+      last = last ->next;
+	while (last->next && !is_sorted(*a))
 		last = last->next;
 	if ((top->value) > (last->value) && (top->value) > (top->next->value))
 	{
 		ra(a);
-		if (is_sorted(*a) == 0)
+		if (!is_sorted(*a))
 			sa(a);
 	}
 	else if ((top->value) > (last->value) && (top->value) < (top->next->value))

@@ -24,7 +24,8 @@
 typedef struct s_node
 {
 	int				value;
-	struct s_node	*next;
+  int index;
+  struct s_node	*next;
 }					t_node;
 
 char				**manage_input(int argc, char **argv);
@@ -39,7 +40,7 @@ long				ft_atol(const char *str);
 void				append_stack(t_node **stack, t_node *a);
 t_node				*new_node(int value);
 void				create_stack_a(t_node **a, char **args);
-void				print_stack(t_node *stack, char name);
+void				print_stack(t_node *a, t_node *b);
 // actions _____________
 void				sa(t_node **a);
 void				sb(t_node **b);

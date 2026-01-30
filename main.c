@@ -26,8 +26,7 @@ int	main(int argc, char **argv)
 	// create stack
 	create_stack_a(&a, args);
 	ft_printf("\n### stack A and B created ### \n\n");
-	print_stack(a, 'a');
-	print_stack(b, 'b');
+	print_stack(a, b);
 	// check if sorted
 	if (is_sorted(a) == 0)
 		ft_printf("\n### this shit is not sorted ###\n\n");
@@ -40,8 +39,7 @@ int	main(int argc, char **argv)
 	
 	turk_sort(&a, &b);
 	ft_printf("\n");
-	print_stack(a, 'a');
-	print_stack(b, 'b');
+	print_stack(a, b);
 	// check if small sort worked
 	if (is_sorted(a) == 0)
 		ft_printf("\n\n### this shit is not sorted###");

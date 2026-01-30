@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// was working on this last
 #include "push_swap.h"
 
 int	is_sorted(t_node *a)
@@ -26,17 +25,27 @@ int	is_sorted(t_node *a)
 	}
 	return (1);
 }
-void	print_stack(t_node *stack, char name)
+void	print_stack(t_node *a, t_node *b)
 {
 	int	i;
 
 	i = 0;
-	while (stack)
+	while (a || b)
 	{
-		ft_printf("%c[%i] = %i\n", name, i, stack->value);
-		stack = stack->next;
+    if(a)
+		ft_printf("a[%i] = %d        ", i, a->value);
+    else 
+      ft_printf("                ");
+    if(b)
+      ft_printf("b[%i] = %d", i, b->value);
+    ft_printf("\n");
+		if(a)
+        a = a->next;
+    if(b)
+      b = b->next;
 		i++;
 	}
+  ft_printf("\n");
 }
 
 int	stack_len(t_node *a)
