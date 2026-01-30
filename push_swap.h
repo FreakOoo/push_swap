@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/28 18:43:21 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/31 00:11:04 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@
 typedef struct s_node
 {
 	int				value;
-  int index;
-  struct s_node	*next;
+	int				index;
+	int				above_median;
+	struct s_node	*next;
 }					t_node;
 
 char				**manage_input(int argc, char **argv);
@@ -58,5 +59,9 @@ int					stack_len(t_node *a);
 int					is_sorted(t_node *a);
 void				small_sort(t_node **a);
 void				turk_sort(t_node **a, t_node **b);
+t_node				*find_smallest(t_node *a);
+t_node				*find_smallest_bigger(t_node *a, int b_value);
+void				smallest_bigger(t_node **a, t_node **b);
+void				set_index(t_node *a);
 
 #endif

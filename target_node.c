@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   turksort.c                                         :+:    :+:            */
+/*   target_node.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2026/01/28 13:57:43 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/30 18:15:18 by mchopin       ########   odam.nl         */
+/*   Created: 2026/01/30 23:27:54 by mchopin       #+#    #+#                 */
+/*   Updated: 2026/01/31 00:10:25 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// currently this segfaults, I'll have to figure out why...
-// so now it properly pushes to B enough times
-// but then it segfaults
 #include "push_swap.h"
 
 t_node	*find_smallest(t_node *a)
 {
 	t_node	*smallest;
 
+	if (!a)
+		return (NULL);
+	smallest = a;
 	while (a)
 	{
 		if (a->value < smallest->value)
 			smallest = a;
+		a = a->next;
 	}
 	return (smallest);
 }
@@ -51,23 +52,34 @@ void	smallest_bigger(t_node **a, t_node **b)
 	my_beloved = find_smallest_bigger(*a, (*b)->value);
 	if (!my_beloved)
 		my_beloved = find_smallest(*a);
-	while (*a != my_beloved)
-		ra(a);
+	if (my_beloved->above_median)
+	{
+		while (*a != my_beloved)
+			ra(a);
+	}
+	else
+	{
+		while (*a != my_beloved)
+			rra(a);
+	}
 	pa(a, b);
 }
-// reread all this shit;
+// also need to compare to median, calculate median
+// and index
+// need to figure out wether to use ra or rra
 
-void	turk_sort(t_node **a, t_node **b)
+void	set_index(t_node *a)
 {
-	t_node *eyes;
-	eyes = *a;
+	int	i;
+	int	median;
 
-	// push to b until 3 left, then small sort
-	while (stack_len(*a) > 3)
+	i = 0;
+	median = stack_len(a) / 2;
+	while (a)
 	{
-		pb(a, b);
-		if (eyes)
-			eyes = eyes->next;
+		a->index = i;
+		a->above_median = (i <= median);
+		a = a->next;
+		i++;
 	}
-	small_sort(a);
 }

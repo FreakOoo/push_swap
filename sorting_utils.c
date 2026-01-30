@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/24 19:19:36 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/28 19:00:59 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/30 23:55:29 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,31 @@ void	print_stack(t_node *a, t_node *b)
 	i = 0;
 	while (a || b)
 	{
-    if(a)
-		ft_printf("a[%i] = %d        ", i, a->value);
-    else 
-      ft_printf("                ");
-    if(b)
-      ft_printf("b[%i] = %d", i, b->value);
-    ft_printf("\n");
-		if(a)
-        a = a->next;
-    if(b)
-      b = b->next;
+		if (a)
+			ft_printf("a[%i] = %d        ", i, a->value);
+		else
+			ft_printf("                ");
+		if (b)
+			ft_printf("b[%i] = %d", i, b->value);
+		ft_printf("\n");
+		if (a)
+			a = a->next;
+		if (b)
+			b = b->next;
 		i++;
 	}
-  ft_printf("\n");
+	ft_printf("\n");
 }
 
 int	stack_len(t_node *a)
 {
-	t_node	*eyes;
-	int		i;
+	int	i;
 
-	eyes = a;
-	i = 1;
-	while (eyes && eyes->next)
+	i = 0;
+	while (a)
 	{
-		eyes = eyes->next;
 		i++;
+		a = a->next;
 	}
 	return (i);
 }

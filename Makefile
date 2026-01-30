@@ -6,7 +6,7 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/12/22 21:43:57 by mchopin       #+#    #+#                  #
-#    Updated: 2026/01/28 14:29:29 by mchopin       ########   odam.nl          #
+#    Updated: 2026/01/30 23:28:22 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ rotate.c \
 reverse_r.c \
 small_sort.c \
 sorting_utils.c \
+target_node.c \
 turksort.c \
 push.c \
 main.c
