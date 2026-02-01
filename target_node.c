@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/30 23:27:54 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/31 01:16:30 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/01 21:38:57 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,15 @@ void	smallest_bigger(t_node **a, t_node **b)
 		my_beloved = find_smallest(*a);
 	while (*a != my_beloved)
 		ra(a);
+			//this still needs to adapt wether its cheaper to rotate or rev rotate
 	pa(a, b);
+	
 }
 // also need to compare to median, calculate median
 // and index
 // need to figure out wether to use ra or rra
+//now I need to calculate the cost of bringing the target to the top, 
+//and if its cheaper with r,rra , rrr , rr instead of doing just ra.
 
 void	set_index(t_node *a)
 {
