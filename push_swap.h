@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/31 00:11:04 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/31 01:45:29 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ typedef struct s_node
 	int				value;
 	int				index;
 	int				above_median;
-	struct s_node	*next;
+	int cost_a;
+	int cost_b;
+	struct s_node *target;
+	struct s_node *next;
 }					t_node;
 
 char				**manage_input(int argc, char **argv);

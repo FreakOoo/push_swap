@@ -6,56 +6,11 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/28 13:57:43 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/30 18:15:18 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/31 01:16:53 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// currently this segfaults, I'll have to figure out why...
-// so now it properly pushes to B enough times
-// but then it segfaults
 #include "push_swap.h"
-
-t_node	*find_smallest(t_node *a)
-{
-	t_node	*smallest;
-
-	while (a)
-	{
-		if (a->value < smallest->value)
-			smallest = a;
-	}
-	return (smallest);
-}
-t_node	*find_smallest_bigger(t_node *a, int b_value)
-{
-	t_node	*my_beloved;
-
-	my_beloved = NULL;
-	while (a)
-	{
-		if (a->value > b_value)
-		{
-			if (!my_beloved || a->value < my_beloved->value)
-				my_beloved = a;
-		}
-		a = a->next;
-	}
-	return (my_beloved);
-}
-void	smallest_bigger(t_node **a, t_node **b)
-{
-	t_node	*my_beloved;
-
-	if (!*a || !*b)
-		return ;
-	my_beloved = find_smallest_bigger(*a, (*b)->value);
-	if (!my_beloved)
-		my_beloved = find_smallest(*a);
-	while (*a != my_beloved)
-		ra(a);
-	pa(a, b);
-}
-// reread all this shit;
 
 void	turk_sort(t_node **a, t_node **b)
 {

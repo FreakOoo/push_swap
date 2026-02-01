@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/30 23:27:54 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/31 00:14:36 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/01/31 01:16:30 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,8 @@ void	smallest_bigger(t_node **a, t_node **b)
 	my_beloved = find_smallest_bigger(*a, (*b)->value);
 	if (!my_beloved)
 		my_beloved = find_smallest(*a);
-	if (my_beloved->above_median)
-	{
-		while (*a != my_beloved)
-			ra(a);
-	}
-	else
-	{
-		while (*a != my_beloved)
-			rra(a);
-	}
+	while (*a != my_beloved)
+		ra(a);
 	pa(a, b);
 }
 // also need to compare to median, calculate median
@@ -78,10 +70,10 @@ void	set_index(t_node *a)
 	while (a)
 	{
 		a->index = i;
-		a->above_median = (i <= median);
+		a->above_median = (i < median);
 		a = a->next;
 		i++;
 	}
 }
 
-//this is where I left off, still need to test.
+// this is where I left off, still need to test.
