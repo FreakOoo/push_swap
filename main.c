@@ -6,11 +6,18 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/01 21:48:19 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/03 21:44:06 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//I need to set the index
+//then I can give them target nodes (each b node gets an a node)
+//once I have the targets linked I can calculate cost
+//based on cost choose actions
+//done
+
 
 int	main(int argc, char **argv)
 {
