@@ -6,11 +6,15 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/28 13:57:43 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/04 23:15:24 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/04 23:25:53 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//Wanted to rotate both when possible
+//then rotate individually
+//hard part is passing the changes made to the others stack
 
 void	double_rotation_choice(t_node **a, t_node **b, t_node *cheapest)
 {
@@ -30,6 +34,7 @@ void	double_rotation_choice(t_node **a, t_node **b, t_node *cheapest)
 		}
 	}
 }
+
 void	rotation_single(t_node **a)
 {
 	t_node	*cheapest;
