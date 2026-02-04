@@ -6,18 +6,17 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/03 22:22:55 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/04 18:34:32 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//I need to set the index
-//then I can give them target nodes (each b node gets an a node)
-//once I have the targets linked I can calculate cost
-//based on cost choose actions
-//done
-
+// I need to set the index
+// then I can give them target nodes (each b node gets an a node)
+// once I have the targets linked I can calculate cost
+// based on cost choose actions
+// done
 
 int	main(int argc, char **argv)
 {
@@ -34,6 +33,14 @@ int	main(int argc, char **argv)
 	create_stack_a(&a, args);
 	ft_printf("\n### stack A and B created ### \n\n");
 	print_stack(a, b);
+	//
+	// now the vision is
+	// set_index(a);
+	// set_index(b);
+	// set_target(a,b);
+	// calcost_b(b)
+	// calcost(a,b)
+	//
 	// check if sorted
 	if (is_sorted(a) == 0)
 		ft_printf("\n### this shit is not sorted ###\n\n");
@@ -43,7 +50,6 @@ int	main(int argc, char **argv)
 		ft_printf("\n### didn't bother checking if sorted ### \n\n");
 	// sorting
 	ft_printf("\n✰✰✰ I'M GONNA SOOOORT ✰✰✰ \n\n");
-	
 	turk_sort(&a, &b);
 	ft_printf("\n");
 	print_stack(a, b);
@@ -54,6 +60,7 @@ int	main(int argc, char **argv)
 		ft_printf("\n\n### nicely sorted### ");
 	else
 		ft_printf("\n\n### didn't bother checking if sorted###");
+	
 	// free all
 	free_split(args);
 	free_stack(&a);

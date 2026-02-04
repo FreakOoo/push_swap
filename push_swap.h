@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/03 19:08:05 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/04 18:27:46 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,8 @@ t_node				*find_smallest(t_node *a);
 t_node				*find_smallest_bigger(t_node *a, int b_value);
 void				smallest_bigger(t_node **a, t_node **b);
 void				set_index(t_node *a);
+void				calcost_b(t_node *b);
+void				calcost_a(t_node *a, t_node *b);
+void				have_crush(t_node *a, t_node *b);
 
 #endif

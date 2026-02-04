@@ -6,7 +6,7 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/12/22 21:43:57 by mchopin       #+#    #+#                  #
-#    Updated: 2026/01/30 23:28:22 by mchopin       ########   odam.nl          #
+#    Updated: 2026/02/04 18:28:40 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ sorting_utils.c \
 target_node.c \
 turksort.c \
 push.c \
+cost.c \
 main.c
 
 
