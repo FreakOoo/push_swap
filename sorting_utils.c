@@ -33,11 +33,17 @@ void	print_stack(t_node *a, t_node *b)
 	while (a || b)
 	{
 		if (a)
+    {
 			ft_printf("a[%i] = %d        ", i, a->value);
+			ft_printf("a[%i] COST = %d        ", i, a->cost_a);
+    }
 		else
 			ft_printf("                ");
 		if (b)
-			ft_printf("b[%i] = %d", i, b->value);
+    {
+      ft_printf("b[%i] = %d", i, b->value);
+			ft_printf("b[%i] COST = %d        ", i, b->cost_b);
+    }
 		ft_printf("\n");
 		if (a)
 			a = a->next;

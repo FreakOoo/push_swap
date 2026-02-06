@@ -74,5 +74,3 @@ t_node	*cheapest_node(t_node **a)
 	return (cheapest);
 }
 
-// this still doesn't correctly handle what happens if one of them is at the top of the stack but the
-// other is not

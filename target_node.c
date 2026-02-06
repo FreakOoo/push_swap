@@ -68,10 +68,10 @@ void	smallest_bigger(t_node **a, t_node **b)
 	my_beloved = find_smallest_bigger(*a, (*b)->value);
 	if (!my_beloved)
 		my_beloved = find_smallest(*a);
-	while (*a != my_beloved)
-		ra(a);
+	//while (*a != my_beloved)
+	//	ra(a);
 	// this still needs to adapt wether its cheaper to rotate or rev rotate
-	pa(a, b);
+	//pa(a, b);
 }
 
 void	have_crush(t_node *a, t_node *b)

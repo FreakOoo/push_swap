@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//might be bugged and when I RB it would print ra then rb
+
 void	ra(t_node **a)
 {
 	t_node	*top;

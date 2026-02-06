@@ -27,6 +27,13 @@ void	pb(t_node **a, t_node **b)
 
 void	pa(t_node **b, t_node **a)
 {
-	pb(b, a);
+  t_node *tmp;
+
+  if(*b == NULL)
+    return;
+  tmp = *b;
+  *b = (*b)->next;
+  tmp->next = *a;
+  *a = tmp;
 	write(1, "pa\n", 3);
 }

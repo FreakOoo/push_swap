@@ -16,40 +16,50 @@
 //then rotate individually
 //hard part is passing the changes made to the others stack
 
-void	double_rotation_choice(t_node **a, t_node **b, t_node *cheapest)
+//at home changed this to a t node from void return type, change that in the .h too
+//still shaky on the single rotation functions
+t_node	*double_rotation_choice(t_node **a, t_node **b, t_node *cheapest)
 {
-	cheapest = cheapest_node(b);
-	{
 		while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
-		{
-			rr(a, b);
-			cheapest->cost_a--;
-			cheapest->cost_b--;
-		}
+     {
+		rr(a, b);
+		cheapest->cost_a--;
+		cheapest->cost_b--;
+     }
 		while (cheapest->cost_a < 0 && cheapest->cost_b < 0)
-		{
-			rrr(a, b);
-			cheapest->cost_a++;
-			cheapest->cost_b++;
-		}
-	}
+		 {
+		rrr(a, b);
+		cheapest->cost_a++;
+		cheapest->cost_b++;
+		 }
+    return cheapest;
 }
 
-void	rotation_single(t_node **a)
+void	rotation_single_a(t_node **a, t_node *cheapest)
 {
-	t_node	*cheapest;
-
-	cheapest = cheapest_node(a);
-	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
+  while (cheapest->cost_a > 0)
 	{
 		ra(a);
 		cheapest->cost_a--;
-		cheapest->cost_b--;
 	}
-	while (cheapest->cost_a < 0 && cheapest->cost_b < 0)
+	while (cheapest->cost_a < 0)
 	{
 		rra(a);
 		cheapest->cost_a++;
+	}
+}
+
+
+void	rotation_single_b(t_node **b, t_node *cheapest)
+{
+  while (cheapest->cost_b > 0)
+	{
+		rb(b);
+		cheapest->cost_b--;
+	}
+	while (cheapest->cost_b < 0)
+	{
+		rrb(b);
 		cheapest->cost_b++;
 	}
 }
@@ -57,15 +67,22 @@ void	rotation_single(t_node **a)
 
 void	turk_sort(t_node **a, t_node **b)
 {
-	t_node *eyes;
-	eyes = *a;
 
-	// push to b until 3 left, then small sort
-	while (stack_len(*a) > 3)
-	{
-		pb(a, b);
-		if (eyes)
-			eyes = eyes->next;
-	}
-	small_sort(a);
+  
+  t_node *cheapest;
+  cheapest = cheapest_node(b);
+  while(*b != NULL)
+  { 
+    //it is doing pa so I think it's entering the loop
+    //but the rotation's don't catch
+    cheapest = cheapest_node(b);
+    double_rotation_choice(a,b,cheapest);
+    rotation_single_a(a,cheapest);
+    rotation_single_b(b,cheapest);
+    pa(b,a);
+    print_stack(*a,*b);
+
+  }
+
+
 }
