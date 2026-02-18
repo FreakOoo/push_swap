@@ -47,11 +47,11 @@ int	ft_abs(int i)
 		return (-i);
 	return (i);
 }
-void	total_cost(t_node **a)
+void	total_cost(t_node *b)
 {
 	t_node	*tmp;
 
-	tmp = *a;
+	tmp = b;
 	while (tmp)
 	{
 		tmp->total_cost = ft_abs(tmp->cost_b) + ft_abs(tmp->cost_a);

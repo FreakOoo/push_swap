@@ -73,7 +73,7 @@ void				set_index(t_node *a);
 void				calcost_b(t_node *b);
 void				calcost_a(t_node *a, t_node *b);
 void				have_crush(t_node *a, t_node *b);
-void				total_cost(t_node **a);
+void				total_cost(t_node *b);
 t_node				*cheapest_node(t_node **a);
 t_node	*double_rotation_choice(t_node **a, t_node **b, t_node *cheapest);
 void	rotation_single_a(t_node **a, t_node *cheapest);

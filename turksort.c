@@ -71,16 +71,23 @@ void	turk_sort(t_node **a, t_node **b)
   
   t_node *cheapest;
   cheapest = cheapest_node(b);
-  while(*b != NULL)
+  while(!(*b == NULL && is_sorted(*a)))
   { 
     //it is doing pa so I think it's entering the loop
     //but the rotation's don't catch
+
+    set_index(*a);    
+    set_index(*b);    
+    have_crush(*a,*b); 
+    calcost_b(*b);    
+    calcost_a(*a,*b);
+
     cheapest = cheapest_node(b);
     double_rotation_choice(a,b,cheapest);
     rotation_single_a(a,cheapest);
     rotation_single_b(b,cheapest);
     pa(b,a);
-    print_stack(*a,*b);
+    // print_stack(*a,*b);
 
   }
 
