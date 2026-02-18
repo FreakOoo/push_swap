@@ -82,6 +82,8 @@ void	turk_sort(t_node **a, t_node **b)
     calcost_b(*b);    
     calcost_a(*a,*b);
 
+
+    // found the bug TURKSORT-BUG, have to rotate a or b depending on cheapest one
     cheapest = cheapest_node(b);
     double_rotation_choice(a,b,cheapest);
     rotation_single_a(a,cheapest);
