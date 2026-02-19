@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/19 21:56:57 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/19 22:24:30 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@
 
 int	main(int argc, char **argv)
 {
-
-	//so far this works
 	char	**args;
 	t_node	*a;
 	t_node	*b;
 
+	// so far this works
 	a = NULL;
 	b = NULL;
 	args = manage_input(argc, argv);
@@ -42,7 +41,7 @@ int	main(int argc, char **argv)
 		sort_five(&a, &b);
 	if (is_sorted(a))
 		return (0);
-	// otherwise radix
+	radix(&a, &b, 0);
 	free_split(args);
 	free_stack(&a);
 	free_stack(&b);

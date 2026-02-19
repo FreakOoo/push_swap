@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/19 21:43:39 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/19 22:23:48 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ void				set_index(t_node *a);
 int					is_sorted(t_node *a);
 void				small_sort(t_node **a);
 void				sort_five(t_node **a, t_node **b);
+void				radix(t_node **a, t_node **b, int shift);
 #endif
