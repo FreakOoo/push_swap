@@ -6,9 +6,13 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/02/19 20:31:45 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/19 20:32:06 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/19 22:04:21 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void radix(t_node **a, t_node **b)
+{
+    
+}
