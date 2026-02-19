@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/28 17:36:40 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/19 22:30:37 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/19 22:31:34 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 	//to not be slowed down by huge numbers
 	// for each value before sorting I can see how many values are lesser than the current one
 	//then I use that as the index that it should be at the end
+
+	//compare usixng index instead of value
 	char	**args;
 	t_node	*a;
 	t_node	*b;
