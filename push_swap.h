@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/04 23:00:24 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/19 21:43:39 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ typedef struct s_node
 {
 	int				value;
 	int				index;
-	int				above_median;
-	int				cost_a;
-	int				cost_b;
-	int				total_cost;
-	struct s_node	*target;
 	struct s_node	*next;
 }					t_node;
 
@@ -59,23 +54,12 @@ void				rra(t_node **a);
 void				rrb(t_node **b);
 void				rrr(t_node **a, t_node **b);
 // utilities (useful outside of push swap) _______
-int					ft_abs(int i);
 int					stack_len(t_node *a);
 t_node				*find_smallest(t_node *a);
 // sorting _____________________
 
+void				set_index(t_node *a);
 int					is_sorted(t_node *a);
 void				small_sort(t_node **a);
-void				turk_sort(t_node **a, t_node **b);
-t_node				*find_smallest_bigger(t_node *a, int b_value);
-void				smallest_bigger(t_node **a, t_node **b);
-void				set_index(t_node *a);
-void				calcost_b(t_node *b);
-void				calcost_a(t_node *a, t_node *b);
-void				have_crush(t_node *a, t_node *b);
-void				total_cost(t_node *b);
-t_node				*cheapest_node(t_node **a);
-t_node	*double_rotation_choice(t_node **a, t_node **b, t_node *cheapest);
-void	rotation_single_a(t_node **a, t_node *cheapest);
-void	rotation_single_b(t_node **b, t_node *cheapest);
+void				sort_five(t_node **a, t_node **b);
 #endif
