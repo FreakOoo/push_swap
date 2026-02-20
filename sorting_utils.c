@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/24 19:19:36 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/30 23:55:29 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/20 19:42:22 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	is_sorted(t_node *a)
 	}
 	return (1);
 }
+
 void	print_stack(t_node *a, t_node *b)
 {
 	int	i;
@@ -33,15 +34,15 @@ void	print_stack(t_node *a, t_node *b)
 	while (a || b)
 	{
 		if (a)
-    {
+		{
 			ft_printf("a[%i] = %d        ", i, a->value);
-    }
+		}
 		else
 			ft_printf("                ");
 		if (b)
-    {
-      ft_printf("b[%i] = %d", i, b->value);
-    }
+		{
+			ft_printf("b[%i] = %d", i, b->value);
+		}
 		ft_printf("\n");
 		if (a)
 			a = a->next;
@@ -63,4 +64,30 @@ int	stack_len(t_node *a)
 		a = a->next;
 	}
 	return (i);
+}
+
+void	calc_index(t_node *a, t_node *current)
+{
+	int	index;
+
+	index = 0;
+	while (a)
+	{
+		if (a->value < current->value)
+			index++;
+		a = a->next;
+	}
+	current->index = index;
+}
+
+void	set_index(t_node *a)
+{
+	t_node	*current;
+
+	current = a;
+	while (current)
+	{
+		calc_index(a, current);
+		current = current->next;
+	}
 }

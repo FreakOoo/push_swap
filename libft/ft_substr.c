@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/11/01 21:32:44 by mchopin       #+#    #+#                 */
-/*   Updated: 2025/11/03 19:12:24 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/20 19:38:18 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!substr)
 		return (0);
 	ft_strlcpy(substr, (s + start), len + 1);
-	substr[len + 1] = '\0';
+	substr[len] = '\0';
 	return (substr);
 }
 

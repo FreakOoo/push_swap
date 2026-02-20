@@ -6,13 +6,13 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/10/30 20:37:34 by mchopin       #+#    #+#                  #
-#    Updated: 2025/11/05 20:06:37 by mchopin       ########   odam.nl          #
+#    Updated: 2026/02/20 19:35:36 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 FLAGS = -Wall -Werror -Wextra -g
-CC = cc
+CC = cc -ggdb
 
 SRCS = ft_isprint.c \
 	   ft_putendl_fd.c \

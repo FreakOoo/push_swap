@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/23 19:47:20 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/28 13:56:42 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/20 19:40:15 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	pb(t_node **a, t_node **b)
 
 void	pa(t_node **b, t_node **a)
 {
-  t_node *tmp;
+	t_node	*tmp;
 
-  if(*b == NULL)
-    return;
-  tmp = *b;
-  *b = (*b)->next;
-  tmp->next = *a;
-  *a = tmp;
+	if (*b == NULL)
+		return ;
+	tmp = *b;
+	*b = (*b)->next;
+	tmp->next = *a;
+	*a = tmp;
 	write(1, "pa\n", 3);
 }

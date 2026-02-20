@@ -6,13 +6,13 @@
 #    By: mchopin <mchopin@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/12/22 21:43:57 by mchopin       #+#    #+#                  #
-#    Updated: 2026/02/19 22:24:55 by mchopin       ########   odam.nl          #
+#    Updated: 2026/02/20 18:17:45 by mchopin       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 FLAGS= -Wall -Werror -Wextra -g
-CC= cc
+CC= cc -ggdb
 LIBFT_DIR = libft
 LIBFT  = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = ft_printf

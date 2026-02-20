@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/27 17:31:51 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/19 21:50:49 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/20 19:42:50 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,12 @@ t_node	*find_smallest(t_node *a)
 	}
 	return (smallest);
 }
-void	set_index(t_node *a)
-{
-	int	i;
-
-	i = 0;
-	while (a)
-	{
-		a->index = i;
-		a = a->next;
-		i++;
-	}
-}
 
 void	small_sort(t_node **a)
 {
 	t_node	*top;
 	t_node	*last;
 
-	// I need to check if it's sorted before running small sort because I took out the built in check for space
 	top = *a;
 	last = *a;
 	while (last->next)

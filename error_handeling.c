@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/01/15 10:04:27 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/01/28 13:56:22 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/20 19:41:20 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	free_stack(t_node **stack)
 	}
 }
 
-int	ft_error(t_node **stack, char **args)
+void	ft_error(t_node **stack, char **args)
 {
 	if (args)
 		free_split(args);

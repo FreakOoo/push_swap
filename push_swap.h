@@ -6,7 +6,7 @@
 /*   By: mchopin <mchopin@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/22 21:18:37 by mchopin       #+#    #+#                 */
-/*   Updated: 2026/02/19 22:23:48 by mchopin       ########   odam.nl         */
+/*   Updated: 2026/02/20 19:43:06 by mchopin       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_node
 }					t_node;
 
 char				**manage_input(int argc, char **argv);
-int					ft_error(t_node **stack, char **args);
+void				ft_error(t_node **stack, char **args);
 void				free_split(char **s);
 int					main(int argc, char **argv);
 int					check_duplicate(t_node *stack, int value);
@@ -58,6 +58,7 @@ int					stack_len(t_node *a);
 t_node				*find_smallest(t_node *a);
 // sorting _____________________
 
+void				calc_index(t_node *a, t_node *current);
 void				set_index(t_node *a);
 int					is_sorted(t_node *a);
 void				small_sort(t_node **a);
